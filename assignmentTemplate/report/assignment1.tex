@@ -1,0 +1,98 @@
+\documentclass[a4paper, titlepage]{article}
+
+% For equations
+\usepackage{amsmath}
+
+% For including figures
+\usepackage{graphicx}
+\usepackage{float}
+
+% Bibiliography setup
+\usepackage[square]{natbib}
+\bibliographystyle{agsm}
+\usepackage[nottoc]{tocbibind}
+
+
+
+
+
+% For typesetting matlab
+\usepackage{listings}
+\usepackage{color} % red, green, blue, yellow, cyan, magenta, black,white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\lstset{language=Matlab,
+    basicstyle=\small,
+    breaklines=true,
+    frame = single,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+
+%\title{Assignment 3\\
+%System description and analysis\\
+%\large EEA004}
+%\author{Dan Thilderkvist, Philip Gutierrez}
+
+\begin{document}
+
+%\maketitle
+
+\begin{titlepage}
+  \begin{center}
+    \vspace*{1cm}
+    \includegraphics[scale=1.0]{../figures/hig_logo_eng.png}\\
+    \vspace{1.5cm}
+    \large EEA004 - Multivariable and Nonlinear Control Systems\\
+    \large Assignment 3\\
+    \vspace{1.5cm}
+    Group 4\\
+    Dan Thilderkvist and Philip Gutierrez\\
+    dan.thilderkvist@hotmail.com philipgutierrez67@gmail.com\\
+    Files: main.m\\
+    
+    \vspace{1cm}
+    \today
+  \end{center}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+
+
+\section{Introduction}
+
+This assignment is a continuation of the previous two assignments where an air handler is analyzed.
+Here we will look closer at two of the nonlinear components of the system, namely the heater and the valve that controls it.
+Both the heater and the valve have nonlinear, but complementary, characteristics which compensate for each other.  However, the valve also exhibits valve authority effect which compromises the compensation between heater and valve.  These nonlinearities will be analyzed closer. 
+\citep[p.123]{glad00}
+
+   
+
+
+\clearpage
+\bibliography{reference}
+
+\clearpage
+\appendix
+
+\section{Appendix}
+Here is the Matlab code used to generate the results in the report and the figures.
+
+\lstinputlisting{../code/main.m}
+\lstinputlisting{../code/question1.m}
+
+\end{document}
